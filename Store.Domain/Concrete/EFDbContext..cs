@@ -10,6 +10,9 @@ namespace Store.Domain.Concrete
 {
     public class EFDbContext : DbContext
     {
+        //public EFDbContext() : base("name=EFDbContext")
+        //{           
+        //}
         public DbSet <Product> Products {get; set;}
     }
 }

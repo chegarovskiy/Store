@@ -8,6 +8,7 @@ using Moq;
 using Ninject;
 
 using Store.Domain.Abstract;
+using Store.Domain.Concrete;
 using Store.Domain.Entitys;
 
 namespace Spare.WebUI.Infrastructure
@@ -47,7 +48,7 @@ namespace Spare.WebUI.Infrastructure
             //});
             //kernel.Bind<IProductRepository>().ToConstant(mock.Object);
 
-            kernel.Bind<IProductRepository>().To<IProductRepository>();
+            kernel.Bind<IProductRepository>().To<EFProductRepository>();
         }
 
     }
