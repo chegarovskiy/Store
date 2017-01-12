@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Spare.WebUI.HtmlHelpers
 {
-    public static class PagingHelper
+    public static class PagingHelpers
     {
         public static MvcHtmlString PageLinks(this HtmlHelper html,
                                               PaigingInfo pagingInfo,
