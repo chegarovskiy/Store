@@ -5,13 +5,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="~/Content/MyStyleSheet.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
+   
 </head>
 <body>
-    <div class="navbar navbar-inverse" role="navigation">
-        <a class="navbar-brand" href="#">Store - магазин автозапчастей</a>
-    </div>
+<div class="navbar navbar-inverse" role="navigation">
+    <a class="navbar-brand" href="#">chastitsa.com главная</a>
+    <a class="navbar-brand" href="#">контакты</a>
+    <a class="navbar-brand" href="#">оплата и доставка</a>
+    <a class="navbar-brand" href="#">гарантия и возврат</a>
+    <a class="navbar-brand" href="#">статьи и обзоры</a>
+    <input type="text" placeholder="Какую запчасть ищете?" id="search-field" data-time="0" autocomplete="off" maxlength="85">
+
+</div>
+
     <div class="row panel">
         <div id="categories" class="col-xs-3">
             Сюда добавим контент позже
