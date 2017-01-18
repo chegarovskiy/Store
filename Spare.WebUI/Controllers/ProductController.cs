@@ -22,14 +22,15 @@ namespace Spare.WebUI.Controllers
 
         public ViewResult List(int page = 1)
         {
+            int count = repository.Products.Count();
             ProductListViewModel model = new ProductListViewModel
             {
-                Products = repository.Products.OrderBy(p=>p.ProductId).Skip((page - 1) * pageSize).Take(pageSize),
+                Products = repository.Products.OrderBy(p=>p.Id).Skip((page - 1) * pageSize).Take(pageSize),
                 PaigingInfo = new PaigingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = repository.Products.Count()
+                    TotalItems = count
                 }
            };
             

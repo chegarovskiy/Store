@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using System.Configuration;
 using Moq;
 using Ninject;
-
 using Store.Domain.Abstract;
 using Store.Domain.Concrete;
 using Store.Domain.Entitys;

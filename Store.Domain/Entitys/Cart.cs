@@ -22,7 +22,7 @@ namespace Store.Domain.Entitys
         // adding new product to cart or exchange it quantity in cart 
         public void AddItem(Product product, int quantity)
         {
-            CartLine line = lineCollection.Where(p => p.Product.ProductId == product.ProductId).FirstOrDefault();
+            CartLine line = lineCollection.FirstOrDefault(p => p.Product.Id == product.Id);
 
             if (line == null)
             {
@@ -40,10 +40,10 @@ namespace Store.Domain.Entitys
 
         public void RemoveLine(Product product)
         {
-            lineCollection.RemoveAll(l => l.Product.ProductId == product.ProductId);
+            lineCollection.RemoveAll(l => l.Product.Id == product.Id);
         }
 
-        public decimal ComputTotalValue()
+        public double ComputTotalValue()
         {
             return lineCollection.Sum(l => l.Product.Price*l.Quantity);
         }

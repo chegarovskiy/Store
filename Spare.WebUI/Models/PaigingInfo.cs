@@ -15,9 +15,6 @@ namespace Spare.WebUI.Models
         // номер текущей страници
         public int CurrentPage { get; set; }
         // общее колличество страниц
-        public int TotalPages
-        {
-            get { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage); }
-        }
+        public int TotalPages => (int)Math.Ceiling((double)TotalItems / ItemsPerPage);
     }
 }

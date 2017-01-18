@@ -12,10 +12,10 @@ namespace Spare.WebUI.Controllers
     public class CartController : Controller
     {
         // GET: Cart
-        private IProductRepository repository;
+        private readonly IProductRepository _repository;
         public CartController(IProductRepository repo)
         {
-            repository = repo;
+            _repository = repo;
         }
 
         public ViewResult Index(string returnUrl)
@@ -28,7 +28,7 @@ namespace Spare.WebUI.Controllers
         }
         public RedirectToRouteResult AddToCart(int productId, string returnUrl)
         {
-            Product product = repository.Products.FirstOrDefault(p => p.ProductId == productId);
+            Product product = _repository.Products.FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
                 GetCart().AddItem(product, 1);
@@ -38,7 +38,7 @@ namespace Spare.WebUI.Controllers
 
         public RedirectToRouteResult RemoveFromCart(int productId, string returnUrl)
         {
-            Product product = repository.Products.FirstOrDefault(p => p.ProductId == productId);
+            Product product = _repository.Products.FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
                 GetCart().RemoveLine(product);
