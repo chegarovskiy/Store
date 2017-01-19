@@ -19,21 +19,25 @@ namespace Spare.WebUI.Controllers
         {
             repository = repo;
         }
+        // int count = repository.Products.Count();
 
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category, int page = 1)
         {
-            int count = repository.Products.Count();
             ProductListViewModel model = new ProductListViewModel
             {
-                Products = repository.Products.OrderBy(p=>p.Id).Skip((page - 1) * pageSize).Take(pageSize),
+                Products = repository.Products
+                    .Where(p => category == null || p.Category == category)
+                    .OrderBy(prod => prod.ProductId)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize),
                 PaigingInfo = new PaigingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = count
-                }
-           };
-            
+                    TotalItems = repository.Products.Count()
+                },
+                CurrentCategory = category
+            };
             return View(model);
         }
 

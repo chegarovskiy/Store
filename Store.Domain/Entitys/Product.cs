@@ -9,9 +9,9 @@ namespace Store.Domain.Entitys
 {
     public class Product
     {
-        [Key]
-        public int Id { get; set; }
-        [MaxLength(250)]
+      //  [Key]
+        public int ProductId { get; set; }
+      //  [MaxLength(250)]
         public string Name { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }

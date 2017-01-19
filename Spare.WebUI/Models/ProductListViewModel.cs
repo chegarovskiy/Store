@@ -10,5 +10,6 @@ namespace Spare.WebUI.Models
     {
         public IEnumerable<Product> Products { get; set; }
         public PaigingInfo PaigingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }

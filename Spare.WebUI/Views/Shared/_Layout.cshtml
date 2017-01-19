@@ -17,13 +17,14 @@
     <a class="navbar-brand" href="#">оплата и доставка</a>
     <a class="navbar-brand" href="#">гарантия и возврат</a>
     <a class="navbar-brand" href="#">статьи и обзоры</a>
+    @Html.Action("Summary", "Cart")
     <input type="text" placeholder="Какую запчасть ищете?" id="search-field" data-time="0" autocomplete="off" maxlength="85">
 
 </div>
 
     <div class="row panel">
         <div id="categories" class="col-xs-3">
-            Сюда добавим контент позже
+            @Html.Action("Menu","Nav")
         </div>
         <div class="col-xs-8">
             @RenderBody()
