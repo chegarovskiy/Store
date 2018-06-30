@@ -1,0 +1,21 @@
+
+.custom-navigation-color{
+	color: #234567;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.custom-navigation-color:hover{
+	color: #bbdaf9;
+	text-decoration: none;
+	background-color: #234567;
+}
+
+.btn{
+	border-color: #234567;
+	width: 40px;
+}
+.navbar{
+	height: 100px;
+	
+
+}
